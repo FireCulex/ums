@@ -1,0 +1,15 @@
+services:
+  ums:
+    image: ums:14.9.0
+    container_name: ums-container
+    ports:
+      - "9001:9001"
+      - "9002:9002"
+      - "5001:5001"
+      - "1900:1900/udp"
+    network_mode: host
+    volumes:
+      - ./etc/UMS:/root/.config/UMS
+      - ./var/log/UMS:/var/log/UMS/root
+      - /media:/media
+    restart: unless-stopped
