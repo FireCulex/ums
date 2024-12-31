@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# Launch UMS. 
+rm /root/.config/UMS/data/UMS.pid
+exec java -cp "ums.jar" net.pms.PMS
